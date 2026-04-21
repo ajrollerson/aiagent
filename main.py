@@ -48,7 +48,7 @@ def main():
             config=types.GenerateContentConfig(
                 tools=[available_functions], system_instruction=system_prompt)
             )
-        log_event("model_response", text=response.text if response.text else None, has_tool_calls=bool(response.function_calls))
+        log_event("model_response", has_tool_calls=bool(response.function_calls))
         for candidate in response.candidates: 
             messages.append(candidate.content)
         if args.verbose == True:
@@ -70,9 +70,10 @@ def main():
                     function_response.append(result.parts[0])
                     if args.verbose:
                         print(f"-> {result.parts[0].function_response.response}")
-                messages.append(types.Content(role="user", parts=function_response))    
+                messages.append(types.Content(role="user", parts=function_response))  
         else:
             if response.text is not None:
+                log_event("model_text_response", text=response.text)
                 print(response.text)
                 break
     else:
