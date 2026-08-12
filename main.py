@@ -25,9 +25,9 @@ messages = [types.Content(role="user", parts=[types.Part(text=args.user_prompt)]
 
 def main():
     log_event("user_input", text=args.user_prompt)
-    recent_logs = get_last_n_logs(5)
+    recent_logs = get_last_n_logs(20)
     log_context = "\n".join(
-        f"{log['type']}: {log.get('text', log.get('tool', log.get('error', '')))}"
+        f"{log.get('timestamp')} - {log['type']}: {log.get('text', log.get('tool', log.get('error', '')))}"
         for log in recent_logs
         )
     messages.insert(0, types.Content(

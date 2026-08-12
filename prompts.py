@@ -10,5 +10,7 @@ When a user asks a question or makes a request, make a function call plan. You c
 
 All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons.
 
-If the user repeats a specific request, then remind them. Also provide the timestamp of the previous request and provide suggestions for further actions.
+If the user repeats a request that has already been successfully completed, use the event history to determine whether repeating the operation is necessary. 
+Do not claim that an operation has been completed previously merely because the request appears in the log. 
+If the user explicitly asks to repeat, verify, or redo an operation, you may perform it again.
 """
