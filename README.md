@@ -52,7 +52,7 @@ GEMINI_API_KEY="your_api_key_here"
 
 Replace `your_api_key_here` with a valid Google Gemini API key.
 
-### Prompt the AI agent
+### Prompt the AI Agent
 ```bash
 uv run main.py "List the files in the current directory"
 ```
@@ -87,10 +87,10 @@ Recent events are retrieved from the JSONL log and transformed into a concise te
 The approach keeps the memory mechanism separate from the agent's core tool-use logic, allowing historical context to be provided without requiring changes to the individual tools.
 
 ## Known Limitations
-- The agent currently retrieves only the most recent events from the log rather than searching the complete history for relevant information. This keeps context retrieval straightforward and limits the amount of historical information supplied to the model, but may cause relevant events to be omitted when an interaction produces a large number of events.
-- Historical events are converted into plain text before injection, which may introduce noise as the log grows and provides limited structure for relevance filtering.
-- Tool failures are surfaced to the agent, but the current implementation does not provide automatic retry or recovery strategies.
-- The agent relies on external API calls, making operation subject to API availability, latency, and service interruptions.
+- The agent currently retrieves only the most recent events from the log rather than searching the complete history for relevant information. This keeps context retrieval straightforward and limits the amount of historical information supplied to the model, but may cause relevant events to be omitted when an interaction produces a large number of events
+- Historical events are converted into plain text before injection, which may introduce noise as the log grows and provides limited structure for relevance filtering
+- Tool failures are surfaced to the agent, but the current implementation does not provide automatic retry or recovery strategies
+- The agent relies on external API calls, making operation subject to API availability, latency, and service interruptions
 
 ## Future Improvements
 - Introduce relevance-based filtering and summarisation for historical events
