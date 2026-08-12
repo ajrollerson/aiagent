@@ -43,6 +43,15 @@ git clone https://github.com/ajrollerson/aiagent.git
 cd aiagent
 ```
 
+### Configure Environment Variables
+Create a `.env` file in the project root:
+
+```text
+GEMINI_API_KEY="your_api_key_here"
+```
+
+Replace `your_api_key_here` with a valid Google Gemini API key.
+
 ### Prompt the AI agent
 ```bash
 uv run main.py "List the files in the current directory"
