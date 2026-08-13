@@ -37,6 +37,7 @@ Demonstration of the agent recognising a previously completed request across ind
 ![Persistent Context](demo/remembering.png)
 
 ## Quick Start
+The following commands assume a Bash/WSL environment.
 ### Clone the Repository
 ```bash
 git clone https://github.com/ajrollerson/aiagent.git
